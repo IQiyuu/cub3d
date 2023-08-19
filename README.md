@@ -1,2 +1,2 @@
 CUB3D.
-Raycasting in C with minilibx
+<h1>Raycasting in C with minilibx</h1>
