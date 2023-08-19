@@ -1,2 +1,2 @@
-CUB3D.
-<h1>Raycasting in C with minilibx</h1>
+<h1>CUB3D</h1>
+<h2>Raycasting in C with minilibx</h2>
