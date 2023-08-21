@@ -15,8 +15,8 @@
 
 # include "libft.h"
 # include "MLX42/MLX42.h"
-# include <math.h>
 # include <fcntl.h>
+# include <math.h>
 
 # define WIDTH 1500
 # define HEIGHT 1500
@@ -45,6 +45,7 @@ typedef struct s_game
     int             error;
     char            **map;
     t_player        *player;
+    mlx_image_t     *p_text[3];
 }   t_game;
 
 void    init_game(t_game *game);
@@ -53,6 +54,7 @@ void    ft_exit(t_game *game);
 
 /*              UTILS TMP           */
 void    print_player(t_player *player);
+void    refresh_text(t_game *game);
 
 /*              hooks               */
 void    key(mlx_key_data_t keydata, void *param);

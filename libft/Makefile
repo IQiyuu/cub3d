@@ -3,6 +3,8 @@ NAME = libft.a
 FILES = ft_strlen \
 		ft_freetab \
 		ft_printab \
+		ft_strjoin \
+		ft_itoa \
 		gnl \
 		gnl_utils
 

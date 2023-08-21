@@ -22,6 +22,8 @@
 void    ft_freetab(char **tab);
 int     ft_strlen(char *str);
 void    ft_printab(char **tab);
+char    *ft_itoa(int n);
+char    *ft_strjoin(char *s1, char *s2);
 
 /*               GNL                 */
 char	*get_next_line(int fd);

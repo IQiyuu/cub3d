@@ -16,7 +16,7 @@ FS = -fsanitize=address -g
 
 CFLAGS = -Iheaders -Wextra -Wall -IMLX42/include
 
-GFLAGS = -Iheaders $(LIB) -Werror -Wextra -Wall MLX42/build/libmlx42.a -IMLX42/include -lglfw -L"/Users/$(USER)/.brew/opt/glfw/lib/"
+GFLAGS = -Iheaders $(LIB) -Werror -Wextra -Wall MLX42/build/libmlx42.a -IMLX42/include -lglfw -L"/Users/$(USER)/.brew/opt/glfw/lib/" -lm
 
 all: $(NAME)
 r: re
