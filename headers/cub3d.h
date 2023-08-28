@@ -20,7 +20,7 @@
 
 # define WIDTH 1500
 # define HEIGHT 1500
-# define PLAYER_SPEED 5
+# define PLAYER_SPEED 1.5
 # define MOUSE_SENSI 50
 
 enum e_error    {SUCCESS,

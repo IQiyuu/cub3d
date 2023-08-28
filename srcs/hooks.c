@@ -20,9 +20,9 @@ void    loop(void *param)
     game = (t_game *)param;
     if (mlx_is_key_down(game->win, MLX_KEY_ESCAPE))
         ft_exit(game);
-    if (game->disp_play && cpt > 60)
+    if (game->disp_play && cpt > 20)
         refresh_text(game);
-    if (cpt++ > 60)
+    if (cpt++ > 20)
         cpt = 0;
 }
 

@@ -60,8 +60,8 @@ void    init_player(t_game *game)
         {
             if (game->map[i][j] == 'N' || game->map[i][j] == 'E' || game->map[i][j] == 'S' || game->map[i][j] == 'W')
             {
-                game->player->x = i;
-                game->player->y = j;
+                game->player->x = j;
+                game->player->y = i;
             }
             if (game->map[i][j] == 'N')
                 game->player->dir = 0;
