@@ -6,7 +6,7 @@
 /*   By: dgoubin <dgoubin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 12:41:15 by dgoubin           #+#    #+#             */
-/*   Updated: 2023/08/19 14:58:29 by dgoubin          ###   ########.fr       */
+/*   Updated: 2023/08/31 16:17:41 by dgoubin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 # define WIDTH 1500
 # define HEIGHT 1500
-# define PLAYER_SPEED 1.5
+# define PLAYER_SPEED 10
 # define MOUSE_SENSI 50
 
 enum e_error    {SUCCESS,
@@ -46,11 +46,15 @@ typedef struct s_game
     char            **map;
     t_player        *player;
     mlx_image_t     *p_text[3];
+    mlx_image_t     *bg;
 }   t_game;
 
 void    init_game(t_game *game);
 void    init_window(t_game *game);
 void    ft_exit(t_game *game);
+
+/*              visual              */
+void    print_minimap(t_game *game);
 
 /*              UTILS TMP           */
 void    print_player(t_player *player);

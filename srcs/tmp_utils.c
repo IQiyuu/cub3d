@@ -6,7 +6,7 @@
 /*   By: dgoubin <dgoubin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 14:24:50 by dgoubin           #+#    #+#             */
-/*   Updated: 2023/08/19 14:52:54 by dgoubin          ###   ########.fr       */
+/*   Updated: 2023/08/31 16:23:30 by dgoubin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 char    *get_dir(t_player *player)
 {
     if ((player->dir >= 0 && player->dir < 23.75) || (player->dir >= 356.25))
-        return("(North)\n");
+        return("(East)\n");
     if ((player->dir >= 23.75 && player->dir < 71.25))
         return("(North East)\n");
     if ((player->dir >= 71.25 && player->dir < 118.75))
-        return("(East)\n");
+        return("(North)\n");
     if ((player->dir >= 118.75 && player->dir < 166.25))
-        return("(South East)\n");
+        return("(North West)\n");
     if ((player->dir >= 166.25 && player->dir < 213.75))
-        return("(South)\n");
+        return("(West)\n");
     if ((player->dir >= 213.75 && player->dir < 261.25))
         return("(South West)\n");
     if ((player->dir >= 261.25 && player->dir < 308.75))
-        return("(West)\n");
+        return("(South)\n");
     if ((player->dir >= 308.75 && player->dir < 356.25))
-        return("(North West)\n");
+        return("(South East)\n");
     return ("(null)");
 }
 
@@ -69,5 +69,5 @@ void    refresh_text(t_game *game)
 
 void    print_player(t_player *player)
 {
-    printf("Player :\n    - x: %f\n    - y: %f\n    - Orientation: %f %s", player->x, player->y, player->dir, get_dir(player));
+    printf("Player :\n\t- x: %f\n\t- y: %f\n\t- Orientation: %f %s\t- Speed: %f\n", player->x, player->y, player->dir, get_dir(player), player->speed);
 }

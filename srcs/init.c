@@ -6,7 +6,7 @@
 /*   By: dgoubin <dgoubin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 13:44:04 by dgoubin           #+#    #+#             */
-/*   Updated: 2023/08/19 14:59:07 by dgoubin          ###   ########.fr       */
+/*   Updated: 2023/08/31 17:06:45 by dgoubin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void    init_player(t_game *game)
         {
             if (game->map[i][j] == 'N' || game->map[i][j] == 'E' || game->map[i][j] == 'S' || game->map[i][j] == 'W')
             {
-                game->player->x = j;
-                game->player->y = i;
+                game->player->x = j * 75 + 16;
+                game->player->y = i * 75 + 16;
             }
             if (game->map[i][j] == 'N')
                 game->player->dir = 0;
@@ -78,6 +78,7 @@ void    init_player(t_game *game)
 void    init_game(t_game *game)
 {
     game->disp_map = 1;
+    game->disp_play = 0;
     game->error = SUCCESS;
     init_map(game);
     init_player(game);
