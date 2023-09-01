@@ -6,7 +6,7 @@
 /*   By: dgoubin <dgoubin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 13:14:13 by dgoubin           #+#    #+#             */
-/*   Updated: 2023/08/31 17:09:59 by dgoubin          ###   ########.fr       */
+/*   Updated: 2023/09/01 20:22:49 by dgoubin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,22 @@ void key(mlx_key_data_t keydata, void *param)
     t_game  *game;
 
     game = (t_game *)param;
+    if (keydata.key == MLX_KEY_RIGHT && keydata.action != MLX_RELEASE)
+    {
+        game->player->dir += game->player->mouse_sensi;
+        if (game->player->dir > 360)
+            game->player->dir -= 360;
+    }
+    if (keydata.key == MLX_KEY_LEFT && keydata.action != MLX_RELEASE)
+    {
+       game->player->dir -= game->player->mouse_sensi;
+        if (game->player->dir < -360)
+            game->player->dir += 360;
+    }
+    if (keydata.key == MLX_KEY_PERIOD && keydata.action != MLX_RELEASE)
+        game->player->mouse_sensi++;
+    if (keydata.key == MLX_KEY_COMMA && keydata.action != MLX_RELEASE)
+        game->player->mouse_sensi--;
     if (keydata.key == MLX_KEY_M && keydata.action == MLX_PRESS)
     {
         game->disp_map = !game->disp_map;

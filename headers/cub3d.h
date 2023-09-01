@@ -6,7 +6,7 @@
 /*   By: dgoubin <dgoubin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 12:41:15 by dgoubin           #+#    #+#             */
-/*   Updated: 2023/08/31 16:17:41 by dgoubin          ###   ########.fr       */
+/*   Updated: 2023/09/01 19:25:27 by dgoubin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define WIDTH 1500
 # define HEIGHT 1500
 # define PLAYER_SPEED 10
-# define MOUSE_SENSI 50
+# define MOUSE_SENSI 15
 
 enum e_error    {SUCCESS,
         FAILLURE,

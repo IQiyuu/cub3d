@@ -6,7 +6,7 @@
 /*   By: dgoubin <dgoubin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 13:09:02 by dgoubin           #+#    #+#             */
-/*   Updated: 2023/08/31 16:07:43 by dgoubin          ###   ########.fr       */
+/*   Updated: 2023/09/01 20:23:30 by dgoubin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,27 @@ void    put_square(t_game *game, int x, int y, int size, uint32_t color)
             mlx_put_pixel(game->bg, x + i, y + j, color);
     }
 
+}
+
+void    print_ray(t_game *game)
+{
+    float   x;
+    float   y;
+    float   angle;
+
+    angle = game->player->dir - 30;
+    while (angle <= game->player->dir + 30)
+    {
+        x = (game->player->x + 16) / 75;
+        y = (game->player->y + 16) / 75;
+        while (game->map[(int)y][(int)x] != '1')
+        {
+            mlx_put_pixel(game->bg, x * 75, y * 75, 0x00FF00FF);
+                x += 0.01 * cos((angle - 90) * M_PI / 180);
+                y += 0.01 * sin((angle - 90) * M_PI / 180);
+        }
+        angle += 0.07;
+    }
 }
 
 void    print_minimap(t_game *game)
@@ -48,6 +69,7 @@ void    print_minimap(t_game *game)
         i++;
     }
     put_square(game, game->player->x, game->player->y, 32, 0xFF0000FF);
+    print_ray(game);
 }
 
 void    init_window(t_game *game)
